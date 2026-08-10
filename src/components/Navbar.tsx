@@ -46,13 +46,13 @@ export function Navbar({ current }: { current: Route }) {
     >
       <nav className="container-page flex h-16 items-center justify-between gap-4 lg:h-18">
         <button onClick={() => go('/')} className="flex items-center gap-2.5 group" aria-label="JK AppTech Solutions home">
-          {/* <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-800 text-white font-display font-bold shadow-glow transition-transform group-hover:scale-105">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-800 text-white font-display font-bold shadow-glow transition-transform group-hover:scale-105">
             JK
-          </span> */}
-          <img src="/logo.png"
+          </span>
+          {/* <img src="/logo.png"
             alt="JK AppTech Solutions Ltd."
             className="h-12 w-auto transition-transform group-hover:scale-105"
-          />
+          /> */}
           <span className="hidden sm:flex flex-col leading-none text-left">
             <span className="font-display text-sm font-bold tracking-tight text-ink-900 dark:text-white">
               JK AppTech
