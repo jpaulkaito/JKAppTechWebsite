@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { useState, type FormEvent } from 'react';
 import {
   Mail,
@@ -53,17 +54,38 @@ export function ContactPage() {
     }
   };
 
-  const onSubmit = (ev: FormEvent) => {
-    ev.preventDefault();
-    const e = validate();
-    setErrors(e);
-    if (Object.keys(e).length > 0) return;
+const onSubmit = async (ev: FormEvent) => {
+  ev.preventDefault();
+
+  const e = validate();
+  setErrors(e);
+
+  if (Object.keys(e).length > 0) return;
+
+  try {
     setStatus('submitting');
-    setTimeout(() => {
-      setStatus('success');
-      setForm(EMPTY);
-    }, 1200);
-  };
+
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        name: form.name,
+        company: form.company,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
+    setStatus('success');
+    setForm(EMPTY);
+  } catch (error) {
+    console.error('EmailJS Error:', error);
+    alert('Failed to send message. Please try again.');
+    setStatus('idle');
+  }
+};
 
   const inputCls = (field: string) =>
     `w-full rounded-xl border bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500/40 dark:bg-ink-900 dark:text-ink-100 ${
@@ -245,7 +267,7 @@ export function ContactPage() {
                       <div>
                         <div className="text-xs font-semibold uppercase tracking-wide text-ink-400">Email</div>
                         <a href="mailto:info@jkapptech.ca" className="font-medium text-ink-800 link-underline dark:text-ink-100">
-                          info@jkapptech.ca
+                          info@jkapptech.com
                         </a>
                       </div>
                     </li>
@@ -256,7 +278,7 @@ export function ContactPage() {
                       <div>
                         <div className="text-xs font-semibold uppercase tracking-wide text-ink-400">Phone</div>
                         <a href="tel:+18005551234" className="font-medium text-ink-800 link-underline dark:text-ink-100">
-                          +1 (800) 555-1234
+                          +1 (236) 865-5537
                         </a>
                       </div>
                     </li>
@@ -266,7 +288,7 @@ export function ContactPage() {
                       </span>
                       <div>
                         <div className="text-xs font-semibold uppercase tracking-wide text-ink-400">Location</div>
-                        <div className="font-medium text-ink-800 dark:text-ink-100">Toronto, Ontario, Canada</div>
+                        <div className="font-medium text-ink-800 dark:text-ink-100">Kelowna, British Columbia, Canada</div>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">

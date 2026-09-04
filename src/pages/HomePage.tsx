@@ -257,7 +257,7 @@ export function HomePage() {
       </section>
 
       <CaseStudiesSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <FAQSection />
 
       {/* Brochure CTA */}
