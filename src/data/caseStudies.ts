@@ -11,7 +11,7 @@ export interface CaseStudy {
 export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'northgate-manufacturing',
-    client: 'Northgate Manufacturing',
+    client: 'Manufacturing Company',
     industry: 'Manufacturing',
     challenge:
       'Purchase approvals moved through email and spreadsheets, taking up to three days and frequently getting lost in inboxes.',
@@ -26,7 +26,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'apex-logistics',
-    client: 'Apex Logistics',
+    client: 'Logistics Company',
     industry: 'Logistics & Transportation',
     challenge:
       'Site inspections were paper-based, with photo evidence stored on personal phones and reports compiled manually days later.',
@@ -41,7 +41,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'tremblay-retail',
-    client: 'Tremblay Retail Group',
+    client: 'Retail Company',
     industry: 'Retail',
     challenge:
       'The entire operation ran on a web of Excel workbooks. Numbers conflicted between departments and leadership had no reliable view of performance.',

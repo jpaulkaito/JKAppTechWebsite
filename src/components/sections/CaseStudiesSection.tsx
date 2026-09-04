@@ -14,7 +14,7 @@ export function CaseStudiesSection() {
               Measurable impact, not just software
             </h2>
             <p className="mt-4 text-lg text-ink-500 dark:text-ink-400">
-              A few of the transformations we've delivered for Canadian businesses.
+              A few of the transformation scenarios for Canadian businesses.
             </p>
           </div>
           <button onClick={() => navigateTo('/solutions')} className="btn-ghost shrink-0">
