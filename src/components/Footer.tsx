@@ -91,15 +91,15 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-ink-600 dark:text-ink-300">
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 text-brand-600 dark:text-brand-400" />
-                <a href="mailto:info@jkapptech.ca" className="link-underline">info@jkapptech.ca</a>
+                <a href="mailto:info@jkapptech.ca" className="link-underline">info@jkapptech.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 text-brand-600 dark:text-brand-400" />
-                <a href="tel:+18005551234" className="link-underline">+1 (800) 555-1234</a>
+                <a href="tel:+18005551234" className="link-underline">+1 (236) 865-5537</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 text-brand-600 dark:text-brand-400" />
-                <span>Toronto, Ontario, Canada</span>
+                <span>Kelowna, British Columbia, Canada</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 text-brand-600 dark:text-brand-400" />
